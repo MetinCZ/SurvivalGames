@@ -11,15 +11,22 @@ use pocketmine\utils\TextFormat;
 
 class ArenaSchedule extends Task{
 
-    public $refill;
+    public $plugin;
     public $arena;
 
-    public function __construct(ChestRefill $refill){
-        $this->refill = $refill;
-        parent::__construct($refill);
+    public function __construct(Arena $plugin){
+        $this->plugin = $plugin;
     }
 
     public function onRun($currentTick){
+
+    }
+
+    private function starting(){
+
+    }
+
+    private function game(){
 
     }
 }

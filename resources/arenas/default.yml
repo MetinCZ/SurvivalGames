@@ -1,31 +1,70 @@
 #Arena name:
-arena-name: Moonlight_Lake
+name: "default"
 
 #Arena level
-arena-level: moonlight_lake
+world: "world"
+
+sign:
+  join_sign:
+    x:
+    y:
+    z:
+  #allow game status on the join sign
+  allow_status: "true"
+  #you can use these variables: %name - arena name, %maxplayers, $minplayers, %aliveplayers, %map - game map, %phase - game phase like deathmatch/waiting
+  status_line_1: ""
+  status_line_1: ""
+  status_line_1: ""
+  status_line_1: ""
 
 #Should chests be refilled?
-#There is no need to write chests coordinates, plugin will automatically detect all chests in the arenas-level
-refill: true
-
-#What is time after game start (in seconds)?
-refill-time: 300
+#There is no need to write chests coordinates, plugin will automatically detect all chests in the arena world
+refill: "true"
+#refill interval in seconds
+interval: 240
 
 #Refill item names:
 #Plugin will automatically detect if item is tool/itemblock/item (and will set count depending on it)
-refill-items:
-- DIAMOND_SWORD
-- STONE
+refill_items:
+- ID: 267
+  meta: 0
+  min_amount: 1
+  max_amount: 1
+- ID: 300
+  meta: 0
+  min_amount: 1
+  max_amount: 1
 
 #Write spawn positions:
-spawn-positions:
-#- -x
-#  -y
-#  -z
-- -127
-  -45
-  -38
-- --14
-  -5
-  -78
-#there is still many things to do
+spawn_positions:
+-  x:
+   y:
+   z:
+-  x:
+   y:
+   z:
+-  x:
+   y:
+-  z:
+
+#arena world time   night/day/cycle or type time in ticks
+time: "cycle"
+
+#allow lightnings to show position of other players
+lightning: "true"
+#delay (in seconds) after start than lightnings begin
+lightning_delay: 180
+#interval in second
+lightning_interval: 30
+
+#Allow deathmatch
+deathmatch: "false"
+
+#max players in arena:
+max_players: 24
+
+#min players required to start
+min_players: 20
+
+#allow start the game by "/sg vote" command
+vote: "true"
