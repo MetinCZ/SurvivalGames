@@ -5,7 +5,7 @@ arena-name: Moonlight_Lake
 arena-level: moonlight_lake
 
 #Should chests be refilled?
-#There is no need to write chests coordinates, plugin will automatically detect all chests in the arena-level
+#There is no need to write chests coordinates, plugin will automatically detect all chests in the arenas-level
 refill: true
 
 #What is time after game start (in seconds)?

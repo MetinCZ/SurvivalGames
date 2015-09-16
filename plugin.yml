@@ -1,5 +1,5 @@
 name: SurvivalGamesPE
-main: SG\Main
+main: SurvivalGames\SurvivalGames
 api: [1.13.0]
 load: STARTUP
 description: SurvivalGames for PocketMine v1.6!
