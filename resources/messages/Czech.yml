@@ -1,0 +1,24 @@
+#Zprávy, které se ukážou v konzoli
+
+plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "SurvivalGames bylo úspěšně načteno!"
+plugin-enable: "Vývojáři: Creeperface01 a kvetinac97"
+plugin-disable: "Děkujeme za použití SurvivalGames!"
+# %NAME jsou jména všech arén, které budou načteny
+arenas-loaded: "Arény %NAME byly úspěšně načteny!"
+
+#Od tohoto řádku lze používat barvy ve formátu &1,§1 (doporučujeme &1)
+
+#Připojování, odpojování na/ze serveru...
+# %PLAYER je nick (jméno) hráče, který danou akci provedl
+server-connect: "&a%PLAYER se právě připojil na server"
+server-disconnect: "&4%PLAYER se právě odpojil ze serveru"
+
+#Pro připojování do hry můžete použít:
+# %PLAYER = nick připojeného hráče, %NAME = jméno arény, %WORLD = svět hry
+# %COUNT = počet hráčů ve aréně %MAXCOUNT = maximální počet hráčů v aréně
+
+game-connect: "&e%PLAYER &ase připojil do arény &7[&e%COUNT&7/&e%MAXCOUNT&7]"
+game-leave: "&e%PLAYER &4se odpojil z arény &7[&e%COUNT&7/&e%MAXCOUNT&7]"
+
+#Zde lze použít pouze %TIME = čas před startem arény, %NAME, %WORLD
+countdown: "
