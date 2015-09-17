@@ -29,4 +29,8 @@ class ArenaSchedule extends Task{
     private function game(){
 
     }
+
+    private function deathmatch(){
+
+    }
 }

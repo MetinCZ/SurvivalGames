@@ -6,9 +6,10 @@ world: "world"
 
 sign:
   join_sign:
-    x:
-    y:
-    z:
+    x: 20
+    y: 15
+    z: 316
+    world: "world"
   #allow game status on the join sign
   allow_status: "true"
   #you can use these variables: %name - arena name, %maxplayers, $minplayers, %aliveplayers, %map - game map, %phase - game phase like deathmatch/waiting
@@ -16,6 +17,13 @@ sign:
   status_line_1: ""
   status_line_1: ""
   status_line_1: ""
+
+#leave position (when player die or leave)
+leave_position:
+  x: 34
+  y: 48
+  z: -987
+  world: "world"
 
 #Should chests be refilled?
 #There is no need to write chests coordinates, plugin will automatically detect all chests in the arena world
@@ -37,15 +45,15 @@ refill_items:
 
 #Write spawn positions:
 spawn_positions:
--  x:
-   y:
-   z:
--  x:
-   y:
-   z:
--  x:
-   y:
--  z:
+-  x: 24
+   y: 10
+   z: 498
+-  x: 29
+   y: 10
+   z: 490
+-  x: 35
+   y: 10
+-  z: 459
 
 #arena world time   night/day/cycle or type time in ticks
 time: "cycle"
@@ -59,6 +67,13 @@ lightning_interval: 30
 
 #Allow deathmatch
 deathmatch: "false"
+#can be players teleported to spawn positions
+#if false, set deathmatch arena coordinates
+use_spawn_positions: "true"
+deathmatch_position:
+  x:
+  y:
+  z:
 
 #max players in arena:
 max_players: 24

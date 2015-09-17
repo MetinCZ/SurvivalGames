@@ -42,4 +42,8 @@ class ArenaManager{
     public function refillChests(){
 
     }
+
+    public function lightning(){
+
+    }
 }
