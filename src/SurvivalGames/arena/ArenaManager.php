@@ -46,4 +46,16 @@ class ArenaManager{
     public function lightning(){
 
     }
+
+    public function getNextJoinPos(){
+
+    }
+
+    public function getMaxPlayers(){
+        return intval($this->plugin->data['max_players']);
+    }
+
+    public function getSpawnPositions(){
+        return $this->data['spawn_positions'];
+    }
 }

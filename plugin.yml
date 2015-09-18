@@ -5,5 +5,19 @@ load: STARTUP
 description: SurvivalGames for PocketMine v1.6!
 version: 0.0.1.beta
 authors: [kvetinac97, Creeperface01]
-commands: []
-permissions: []
+
+commands:
+  sg:
+    description: "main SurvivalGames command"
+
+permissions:
+  sg:
+    description: "Main SurvivalGames permission"
+    default: op
+    children:
+      sg.vote:
+        description: "Permission for /sg vote command"
+        default: true
+      sg.full:
+        description: "Allow player join to full arenas"
+        default: op

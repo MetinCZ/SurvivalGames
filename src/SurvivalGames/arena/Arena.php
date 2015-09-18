@@ -26,17 +26,24 @@ class Arena extends ArenaManager implements Listener{
     public $id;
     public $data;
     public $level;
+    public $msg;
+
+    public $positions;
 
     public function __construct(SurvivalGames $plugin, $id, $data){
         parent::__construct($this);
         $this->plugin = $plugin;
         $this->id = $id;
         $this->data = $data;
+        $this->positions = array_fill(1, count($this->getSpawnPositions()), 0);
+        $this->msg = $this->plugin->
         $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaSchedule($this), 20);
     }
 
     public function joinToArena(Player $p){
-
+        if($this->isArenaFull() && !$p->isOp() && !$p->hasPermission("sg.full")){
+            $p->sendMessage();
+        }
     }
 
     public function leaveArena(Player $p){

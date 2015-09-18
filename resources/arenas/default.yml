@@ -4,6 +4,17 @@ name: "default"
 #Arena level
 world: "world"
 
+#Arena area
+area_pos1:
+  x:
+  y:
+  z:
+
+area_pos2:
+  x:
+  y:
+  z:
+
 sign:
   join_sign:
     x: 20
@@ -14,9 +25,9 @@ sign:
   allow_status: "true"
   #you can use these variables: %name - arena name, %maxplayers, $minplayers, %aliveplayers, %map - game map, %phase - game phase like deathmatch/waiting
   status_line_1: ""
-  status_line_1: ""
-  status_line_1: ""
-  status_line_1: ""
+  status_line_2: ""
+  status_line_3: ""
+  status_line_4: ""
 
 #leave position (when player die or leave)
 leave_position:
@@ -70,6 +81,7 @@ deathmatch: "false"
 #can be players teleported to spawn positions
 #if false, set deathmatch arena coordinates
 use_spawn_positions: "true"
+
 deathmatch_position:
   x:
   y:
@@ -83,3 +95,5 @@ min_players: 20
 
 #allow start the game by "/sg vote" command
 vote: "true"
+#minimal players count required to start game by /sg vote
+vote_players_count: 10
