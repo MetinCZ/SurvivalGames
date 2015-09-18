@@ -9,19 +9,7 @@ arenas-loaded: "Areny %NAME byly uspesne nacteny."
 #Messagges czech by MetinCZ (omlouvám se kdyby někde byly chyby!)
 #Od tohoto řádku lze používat barvy ve formátu &1,§1 (doporučujeme &1)
 
-
-version: 1
-prefix:
-  main: "&6[&4&lSG&6]"
-  states:
-    info: ''
-    warning: "&c[Upozorneni] "
-    error: "&4[Chyba]"
-
-#Připojování, odpojování na/ze serveru...
-# %PLAYER je nick (jméno) hráče, který danou akci provedl
-server-connect: "&a%PLAYER se pripojil/a na server."
-server-disconnect: "&4%PLAYER se odpojil/a."
+prefix: "&6[&4&lSG&6]"
 
 #Všechny překlady nemusí být 100% dobře!
 
@@ -39,7 +27,7 @@ leave_from_arena: "&cOdpojil/a ses z areny &b%NAME."
 player_vote: "&b %PLAYER volil/a aby arena uz startovala."
 players_remaining: "&2 Hracu zbyva v arene: &e[%activeplayers] !"
 player_win: "&e %KILLER &czabil/a &e %PLAYER &a a vyhral/a v &3arene %NAME &bVelka gratulace!"
-spectate: "&aTed jsi sledujici! Pouzij /sg leave pro opusteni areny."
+spectate: "&aTed jsi spectator! Pouzij /sg leave pro opusteni areny."
 no_permission: "&cNemas prava na pripojeni do areny %NAME"
 restock_chest: "&5Bedny byly doplneny!"
 countdown: "&b Arena: %NAME %WORLD startuje za &2%TIME"
