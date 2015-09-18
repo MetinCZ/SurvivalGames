@@ -44,9 +44,17 @@ class Arena extends ArenaManager implements Listener{
     }
 
     public function joinToArena(Player $p){
-        if($this->isArenaFull() && !$p->isOp() && !$p->hasPermission("sg.full")){
-            $p->sendMessage();
+        if($this->game >= 1){
+            $p->sendMessage($this->msg->getMsg(""));
         }
+        if($this->isArenaFull() && !$p->isOp() && !$p->hasPermission("sg.full")){
+            $p->sendMessage($this->msg->getMsg("")); //full arena
+            return;
+        }
+        $this->players[strtolower($p->getName())]["ins"] = $p;
+        $this->saveInv($p);
+        $p->teleport($this->getNextJoinPos());
+        $this->messageArenaPlayers("");
     }
 
     public function leaveArena(Player $p){
@@ -54,6 +62,10 @@ class Arena extends ArenaManager implements Listener{
     }
 
     public function startGame(){
+
+    }
+
+    public function startDeathMatch(){
 
     }
 

@@ -11,11 +11,13 @@ namespace SurvivalGames\Arena;
 
 use pocketmine\block\Block;
 use pocketmine\block\Chest;
+use pocketmine\inventory\PlayerInventory;
 use pocketmine\item\Item;
+use pocketmine\level\Position;
 use pocketmine\math\Vector3;
 use pocketmine\Player;
 
-class ArenaManager{
+abstract class ArenaManager{
 
     public $plugin;
 
@@ -23,12 +25,17 @@ class ArenaManager{
         $this->plugin = $plugin;
     }
 
-    public function getArenaPlayers($ingame = false){
-
+    public function getArenaPlayers(){
+        $players = [];
+        foreach($this->plugin->players as $name => $p){
+            $players[$name] = $p["ins"];
+        }
     }
 
-    public function messageAllPlayers($message){
-
+    public function messageArenaPlayers($message){
+        foreach($this->plugin->players as $p){
+            $p["ins"]->sendMessage($message);
+        }
     }
 
     public function inArena(Player $p){
@@ -36,7 +43,7 @@ class ArenaManager{
     }
 
     public function isArenaFull(){
-
+        return $this->getArenaPlayers() >= $this->plugin->data["max_players"] ? true : false;
     }
 
     public function checkAlive(){
@@ -58,7 +65,18 @@ class ArenaManager{
     }
 
     public function getNextJoinPos(){
-
+        $find = false;
+        $i = 0;
+        while($find = false){
+            foreach($this->plugin->positions as $key => $pos){
+                if($pos === $i){
+                    $this->plugin->positions[$key]++;
+                    $find = $this->plugin->data["join_positions"][$key];
+                }
+            }
+            $i++;
+        }
+        return new Position($find->x, $find->y, $find->z, $this->plugin->level);
     }
 
     public function getMaxPlayers(){
@@ -98,5 +116,23 @@ class ArenaManager{
                 $this->plugin->level->setTime($this->plugin->data["time"]);
                 break;
         }
+    }
+
+    public function saveInv(Player $p){
+        $this->plugin->players[strtolower($p->getName())]['inv'] = new VirtualInventory($p);
+        $p->getInventory()->clearAll();
+        $p->getInventory()->sendContents($p);
+    }
+
+    public function loadInv(Player $p){
+        $inv = $p->getInventory();
+        $inv->clearAll();
+        $items = $this->plugin->players[strtolower($p->getName())]['inv'];
+        $inv->setContents($items->getContents());
+        $inv->setArmorContents($items->armor);
+        for($i = 0; $i < 10; $i++){
+            $inv->setHotbarSlotIndex($items->hotbar[$i], $i);
+        }
+        $inv->sendContents($p);
     }
 }
