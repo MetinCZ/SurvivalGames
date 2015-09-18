@@ -18,7 +18,6 @@ class SurvivalGames extends PluginBase{
     public $arenas = [];
     public $messagesManager;
     public $cfg;
-    public $msg;
 
     public function onEnable(){
         $this->initConfig();
@@ -50,7 +49,11 @@ class SurvivalGames extends PluginBase{
     }
 
     private function checkSettings(Config $cfg){
-        foreach($cfg->getAll() as $key => $index){
+        $data = $cfg->getAll();
+        if(!(isset($data["name"]) && isset($data["world"]) && isset($data["area_pos1"]) && isset($data["area_pos2"]) && isset($data["sign"]) && isset($data["leave_position"]) && isset($data["refill"]) && isset($data["refill_interval"]) && isset($data["refill_items"]) && isset($data["spawn_positions"]) && isset($data["time"]) && isset($data["lightning"]) && isset($data["lightning_delay"]) && isset($data["lightning_interval"]) && isset($data["deathmatch"]) && isset($data["use_spawn_positions"]) && isset($data["deathmatch_position"]) && isset($data["max_players"]) && isset($data["min_players"]) && isset($data["vote"]) && isset($data["vote_players_count"]))){
+            return false;
+        }
+        foreach($data as $key => $index){
             switch($key){
                 case "world":
                     if(!$this->getServer()->isLevelGenerated($index)){
@@ -58,6 +61,9 @@ class SurvivalGames extends PluginBase{
                     }
                     break;
                 case "area_pos1":
+                    if(!(isset($index["x"]) && isset($index["y"]) && isset($index["z"]))){
+                        return false;
+                    }
                     foreach($index as $key1 => $index1){
                         switch($key){
                             case "x":
@@ -79,6 +85,9 @@ class SurvivalGames extends PluginBase{
                     }
                     break;
                 case "are_pos2":
+                    if(!(isset($index["x"]) && isset($index["y"]) && isset($index["z"]))){
+                        return false;
+                    }
                     foreach($index as $key1 => $index1){
                         switch($key){
                             case "x":
@@ -100,10 +109,16 @@ class SurvivalGames extends PluginBase{
                     }
                     break;
                 case "sign":
+                    if(!(isset($index["join_sign"]) && isset($index["allow_status"]) && isset($index["status_line_1"]) && isset($index["status_line_2"]) && isset($index["status_line_3"]) && isset($index["status_line_4"]))){
+                        return false;
+                    }
                     foreach($index as $key1 => $index1){
                         switch($key1){
                             case "join_sign":
-                                foreach($index1['join_sign'] as $key2 => $index2){
+                                if(!(isset($index["x"]) && isset($index["y"]) && isset($index["z"]))){
+                                    return false;
+                                }
+                                foreach($index1 as $key2 => $index2){
                                     switch($key2){
                                         case "x":
                                             if(!is_numeric($index2)){
@@ -132,6 +147,9 @@ class SurvivalGames extends PluginBase{
                     }
                     break;
                 case "leave_position":
+                    if(!(isset($index["x"]) && isset($index["y"]) && isset($index["z"]))){
+                        return false;
+                    }
                     foreach($index as $key1 => $index1){
                         switch($key1){
                             case "x":
@@ -157,7 +175,7 @@ class SurvivalGames extends PluginBase{
                         return false;
                     }
                     break;
-                case "interval":
+                case "refill_interval":
                     if(!is_numeric($index)){
                         return false;
                     }

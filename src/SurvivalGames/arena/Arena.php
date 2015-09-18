@@ -27,6 +27,7 @@ class Arena extends ArenaManager implements Listener{
     public $data;
     public $level;
     public $msg;
+    public $chests = [];
 
     public $positions;
 
@@ -36,7 +37,9 @@ class Arena extends ArenaManager implements Listener{
         $this->id = $id;
         $this->data = $data;
         $this->positions = array_fill(1, count($this->getSpawnPositions()), 0);
-        $this->msg = $this->plugin->
+        $this->msg = $this->plugin->messagesManager;
+        $this->plugin->getServer()->loadLevel($this->data["world"]);
+        $this->findChests();
         $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaSchedule($this), 20);
     }
 

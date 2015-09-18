@@ -40,7 +40,7 @@ leave_position:
 #There is no need to write chests coordinates, plugin will automatically detect all chests in the arena world
 refill: "true"
 #refill interval in seconds
-interval: 240
+refill_interval: 240
 
 #Refill item names:
 #Plugin will automatically detect if item is tool/itemblock/item (and will set count depending on it)
