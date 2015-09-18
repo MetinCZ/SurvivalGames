@@ -1,24 +1,129 @@
 #Zprávy, které se ukážou v konzoli
 
-plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "SurvivalGames bylo úspěšně načteno!"
-plugin-enable: "Vývojáři: Creeperface01 a kvetinac97"
-plugin-disable: "Děkujeme za použití SurvivalGames!"
+plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "Plugin SurvivalGamesPE uspesne nacten!"
+plugin-enable: "Plugin SurvivalGamesPE byl uspesne povolen "
+plugin-disable: "Plugin SurvivalGamesPE byl uspesne odnacten!"
 # %NAME jsou jména všech arén, které budou načteny
-arenas-loaded: "Arény %NAME byly úspěšně načteny!"
+arenas-loaded: "Areny %NAME byly uspesne nacteny."
 
+#Messagges czech by MetinCZ (omlouvám se kdyby někde byly chyby!)
 #Od tohoto řádku lze používat barvy ve formátu &1,§1 (doporučujeme &1)
+
+
+version: 1
+prefix:
+  main: "&6[&4&lSG&6]"
+  states:
+    info: ''
+    warning: "&c[Upozorneni] "
+    error: "&4[Chyba]"
 
 #Připojování, odpojování na/ze serveru...
 # %PLAYER je nick (jméno) hráče, který danou akci provedl
-server-connect: "&a%PLAYER se právě připojil na server"
-server-disconnect: "&4%PLAYER se právě odpojil ze serveru"
+server-connect: "&a%PLAYER se pripojil/a na server."
+server-disconnect: "&4%PLAYER se odpojil/a."
+
+#Všechny překlady nemusí být 100% dobře!
 
 #Pro připojování do hry můžete použít:
 # %PLAYER = nick připojeného hráče, %NAME = jméno arény, %WORLD = svět hry
 # %COUNT = počet hráčů ve aréně %MAXCOUNT = maximální počet hráčů v aréně
 
-game-connect: "&e%PLAYER &ase připojil do arény &7[&e%COUNT&7/&e%MAXCOUNT&7]"
-game-leave: "&e%PLAYER &4se odpojil z arény &7[&e%COUNT&7/&e%MAXCOUNT&7]"
+game-connect: "&b%PLAYER &ase pripojil/a do areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+game-leave: "&b%PLAYER &4se odpojil/a z areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+join_to_arena: "&aPripojil/a ses do areny &b%NAME. &1Arena zacina za &b%TIME"
+leave_from_arena: "&cOdpojil/a ses z areny &b%NAME."
 
+#Informační zprávy do hry.
 #Zde lze použít pouze %TIME = čas před startem arény, %NAME, %WORLD
-countdown: "
+player_vote: "&b %PLAYER volil/a aby arena uz startovala."
+players_remaining: "&2 Hracu zbyva v arene: &e[%activeplayers] !"
+player_win: "&e %KILLER &czabil/a &e %PLAYER &a a vyhral/a v &3arene %NAME &bVelka gratulace!"
+spectate: "&aTed jsi sledujici! Pouzij /sg leave pro opusteni areny."
+no_permission: "&cNemas prava na pripojeni do areny %NAME"
+restock_chest: "&5Bedny byly doplneny!"
+countdown: "&b Arena: %NAME %WORLD startuje za &2%TIME"
+started: "&aArena %NAME zacala." 
+gameend: "&bArena %NAME skoncila!"
+gamewaiting: "&bArena %NAME ceka na hrace. Pripojte se"
+gamestarting: "&bArena %NAME zacina za %TIME sekund!"
+gamestarted: "&bArena %NAME zacala!"
+gamedisabled: "&bArena %NAME vypnuta"
+gameenabled: "&bArena %NAME zapnuta"
+
+ #Chybné upozornění. (ERRORS)
+game_full: "&cArena %NAME je plna!"
+already_ingame: "&cArena %NAME momentalne bezi."
+no_permission: "&cNemas pravo na tuto akci."
+game_disabled: "&cArena %NAME je vypnuta!"
+not_enought_players: "&cNeni dostatek hracu pro startovani areny."
+game_doesnt_exist: "&cArena %NAME neexistuje!"
+not_ingame: "&cMusis byt v arene pro tuto akci!"
+command: "&cPrikaz %COMMAND nefunguje"
+no_lobby_spawn: "&cLobby spawn Neni nastaven!"
+wrong_target: "&cNa blok co koukas neni %TYPE."
+not_a_number: "&e %INPUT &cneni cislo!"
+not_specified: "&c%INPUT nespecifikovano!"
+arguments_not_needed: '&cArgumenty neni treba!'
+game_not_exist: "&cTato hra neexistuje"
+not_in_arena: "&cNeni v arene!"
+between: "&cSpawn musi byt mezi 1 & %NUM."
+bad_input: "&cVstup musi byt "dalsi" nebo cislo."
+not_inside: "&cNejsi uvnitr areny!"
+no_spawns: "&cNeni nastaveny spawn."
+spect_in_game: "&cNemuzes sledovat arenu kdyz je ve hre!"
+
+#Zprávy při smrti v aréně.
+DEFAULT: "&b%PLAYER &cumrel/a!"
+BLOCK_EXPLOSION: "&b%PLAYER &6 byl/a zabit/a od vybuchu!"
+ENTITY_EXPLOSION: "&b%PLAYER &6 byl/a zabit/a vybuchem!"
+DROWNING: "&b%PLAYER &6se utopil/a!"
+FALL: "&b%PLAYER &6spadl/a z velke vysky a zemrel/a!"
+FIRE: "&b%PLAYER &6shorel/a!"
+FIRE_TICK: "&b%PLAYER &6uhorel/a k smrti!"
+LAVA: "&b%PLAYER &6shorel/a v lave!"
+LIGHTING: "&b%PLAYER &6byl/a zabita bleskem!"
+MAGIC: "&b%PLAYER &6byl/a zabita magii"
+POISON: "&b%PLAYER &6byl/a otraven/a a zemrel."
+PROJECTILE: "&b%PLAYER &6byl/a strelen sipem a zemrel"
+STARVATION: "&b%PLAYER &6umrel/a na vyhladoveni!"
+SUICIDE: "&b%PLAYER &cbyl/a zabit administratorem"
+VOID: "&b%PLAYER &6spadl/a do voidu"
+WITHER: "&b%PLAYER &6byl/a zabit witherem!"
+CREEPER: "&b%PLAYER &6byl/a zabit/a vybuchem od creepra!"
+SKELETON: "&b%PLAYER &6byl/a zabit/a skeletonem!"
+ZOMBIE: "&b%PLAYER &6byl/a nakazen/a od zombika a zemrel/a!"
+PIG_ZOMBIE: "&b%PLAYER &6byl/a zabit/a  ZombiPigmenem!"
+SPIDER: "&b%PLAYER &6byl/a zabit/a pavoukem!"
+CAVE_SPIDER: "&b%PLAYER &6byl/a zabit/a jedovatym pavoukem!"
+GHAST: "&b%PLAYER &6byl/a zabit/a ghastem!"
+PLAYER: "&b%PLAYER &cbyl/a zabit/a hracem  &e%KILLER &b s %ITEM!"
+
+#Tyto zprávy jsou  killstreak double kill atd..
+level1: "&b%PLAYER &6 Double Kill!"
+level2: "&b%PLAYER &e Multi Kill!"
+level3: "&b%PLAYER &5&l Ultra Kill!"
+level4: "&b%PLAYER &4&l Unbelievable Kill!"
+level5: "&b&l%PLAYER &2&l je  legendarni killer!"
+
+#Tyto zprávy se zobrazují v /help ( (cislo) Nechávám anglicky)
+createarena: "Create a new arena with the current WorldEdit selection"
+delarena: "Delete an arena"
+disable: "Disables arena <id>"
+enable: "Enables arena <id>"
+flag: "Modifies an arena-specific setting"
+forcestart: "Forces the game to start"
+join: "Join the lobby"
+leave: "Leaves the game"
+leavequeue: "Leave the queue for any queued games"
+lisarenas: "List all available arenas"
+listplayers: "List all players in the arena you are playing in"
+resetspawns: "Resets spawns for Arena <id>"
+setlobbyspawn: "Set the lobby spawnpoint"
+addlobbywall: "Add a lobby stats wall for Arena <id>"
+setspawn: "Sets a spawn for the arena you are located in"
+setstatswall: "Sets the stats wall"
+spectate: "Spectate a running arena"
+stats: "Shows you your own stats"
+vote: "Votes to start the game"
+teleport: "Teleport to an arena"
