@@ -107,8 +107,8 @@ level4: "&b%PLAYER &4&l Unbelievable Kill!"
 level5: "&b&l%PLAYER &2&l je  legendarni killer!"
 
 #Tyto zprávy se zobrazují v /help ( (cislo) Nechávám anglicky)
-createarena: "Create a new arena with the current WorldEdit selection"
-delarena: "Delete an arena"
+createarena: "Vytvori novou arenu"
+delarena: "Smaze arenu"
 disable: "Disables arena <id>"
 enable: "Enables arena <id>"
 flag: "Modifies an arena-specific setting"
