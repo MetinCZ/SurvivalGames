@@ -18,16 +18,22 @@ class SurvivalGames extends PluginBase{
     public $arenas = [];
     public $messagesManager;
     public $cfg;
+    public $msg;
+
+    public function onLoad(){
+     $this->initConfig();
+     $this->getLogger()->info(TextFormat::YELLOW.$this->msg->get("plugin-load"));
+    }
 
     public function onEnable(){
-        $this->initConfig();
         $this->cfg = (new Config($this->getDataFolder()."config.yml", Config::YAML))->getAll();
         $this->messagesManager = new Messages($this);
         $this->loadArenas();
+        $this->getLogger()->info(TextFormat::DARK_GREEN.$this->msg->get("plugin-enable"));
     }
 
     public function onDisable(){
-
+     $this->getLogger()->info(TextFormat::DARK_RED.$this->msg->get("plugin-disable"));
     }
 
     private function registerArena($arena, $data){
