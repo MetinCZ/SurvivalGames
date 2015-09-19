@@ -21,7 +21,7 @@ class SurvivalGames extends PluginBase{
 
     public function onEnable(){
         $this->initConfig();
-        $this->cfg = new Config($this->getDataFolder()."config.yml", Config::YAML);
+        $this->cfg = (new Config($this->getDataFolder()."config.yml", Config::YAML))->getAll();
         $this->messagesManager = new Messages($this);
         $this->loadArenas();
     }
@@ -50,7 +50,7 @@ class SurvivalGames extends PluginBase{
 
     private function checkSettings(Config $cfg){
         $data = $cfg->getAll();
-        if(!(isset($data["name"]) && isset($data["world"]) && isset($data["area_pos1"]) && isset($data["area_pos2"]) && isset($data["sign"]) && isset($data["leave_position"]) && isset($data["refill"]) && isset($data["refill_interval"]) && isset($data["refill_items"]) && isset($data["spawn_positions"]) && isset($data["time"]) && isset($data["lightning"]) && isset($data["lightning_delay"]) && isset($data["lightning_interval"]) && isset($data["deathmatch"]) && isset($data["use_spawn_positions"]) && isset($data["deathmatch_position"]) && isset($data["max_players"]) && isset($data["min_players"]) && isset($data["vote"]) && isset($data["vote_players_count"]))){
+        if(!(isset($data["name"]) && isset($data["world"]) && isset($data["area_pos1"]) && isset($data["area_pos2"]) && isset($data["sign"]) && isset($data["leave_position"]) && isset($data["spawn_positions"]) && isset($data["time"]))){
             return false;
         }
         foreach($data as $key => $index){
@@ -170,28 +170,6 @@ class SurvivalGames extends PluginBase{
                         }
                     }
                     break;
-                case "refill":
-                    if($index != "true" && $index != "false"){
-                        return false;
-                    }
-                    break;
-                case "refill_interval":
-                    if(!is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "refill_items":
-                    foreach($index as $key1 => $index1){
-                        if(!is_array($index1)){
-                            continue;
-                        }
-                        foreach($index1 as $index2){
-                            if(!is_numeric($index2)){
-                                return false;
-                            }
-                        }
-                    }
-                    break;
                 case "spawn_positions":
                     foreach($index as $key1 => $index1){
                         if(!is_array($index1)){
@@ -206,58 +184,6 @@ class SurvivalGames extends PluginBase{
                     break;
                 case "time":
                     if($index != "cycle" && $index != "night" && $index != "day" && !is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "lightning":
-                    if($index != "true" && $index != "false"){
-                        return false;
-                    }
-                    break;
-                case "lightning_delay":
-                    if(!is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "lightning_interval":
-                    if(!is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "deathmatch":
-                    if($index != "true" && $index != "false"){
-                        return false;
-                    }
-                    break;
-                case "use_spawn_positions":
-                    if($index != "true" && $index != "false"){
-                        return false;
-                    }
-                    break;
-                case "deathmatch_position":
-                    foreach($index as $index1){
-                        if(!is_numeric($index1)){
-                            return false;
-                        }
-                    }
-                    break;
-                case "max_players":
-                    if(!is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "min_players":
-                    if(!is_numeric($index)){
-                        return false;
-                    }
-                    break;
-                case "vote":
-                    if($index != "true" && $index != "false"){
-                        return false;
-                    }
-                    break;
-                case "vote_players_count":
-                    if(!is_numeric($index)){
                         return false;
                     }
                     break;

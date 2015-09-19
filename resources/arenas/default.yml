@@ -36,24 +36,6 @@ leave_position:
   z: -987
   world: "world"
 
-#Should chests be refilled?
-#There is no need to write chests coordinates, plugin will automatically detect all chests in the arena world
-refill: "true"
-#refill interval in seconds
-refill_interval: 240
-
-#Refill item names:
-#Plugin will automatically detect if item is tool/itemblock/item (and will set count depending on it)
-refill_items:
-- ID: 267
-  meta: 0
-  min_amount: 1
-  max_amount: 1
-- ID: 300
-  meta: 0
-  min_amount: 1
-  max_amount: 1
-
 #Write spawn positions:
 spawn_positions:
 -  x: 24
@@ -68,32 +50,3 @@ spawn_positions:
 
 #arena world time   night/day/cycle or type time in ticks
 time: "cycle"
-
-#allow lightnings to show position of other players
-lightning: "true"
-#delay (in seconds) after start than lightnings begin
-lightning_delay: 180
-#interval in second
-lightning_interval: 30
-
-#Allow deathmatch
-deathmatch: "false"
-#can be players teleported to spawn positions
-#if false, set deathmatch arena coordinates
-use_spawn_positions: "true"
-
-deathmatch_position:
-  x:
-  y:
-  z:
-
-#max players in arena:
-max_players: 24
-
-#min players required to start
-min_players: 20
-
-#allow start the game by "/sg vote" command
-vote: "true"
-#minimal players count required to start game by /sg vote
-vote_players_count: 10

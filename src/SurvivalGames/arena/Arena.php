@@ -14,6 +14,7 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\Player;
 use SurvivalGames\SurvivalGames;
@@ -23,6 +24,7 @@ class Arena extends ArenaManager implements Listener{
     public $plugin;
     public $game = 0; //0 = waiting, 1 = starting, 2 = playing, 3 = deathmatch
     public $players = [];
+    public $queue = [];
     public $id;
     public $data;
     public $level;
@@ -66,11 +68,18 @@ class Arena extends ArenaManager implements Listener{
     }
 
     public function startDeathMatch(){
-
+        $this->game = 1;
     }
 
     public function stopGame(){
+        $this->game = 0;
+    }
 
+    public function onInteract(PlayerInteractEvent $e){
+        $p = $e->getPlayer();
+        if($e->getAction() === $e::LEFT_CLICK_BLOCK){
+
+        }
     }
 
     public function onBlockBreak(BlockBreakEvent $e){

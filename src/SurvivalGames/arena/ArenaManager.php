@@ -135,4 +135,19 @@ abstract class ArenaManager{
         }
         $inv->sendContents($p);
     }
+
+    public function addToQueue(Player $p){
+        array_push($this->plugin->queue, strtolower($p->getName()));
+    }
+
+    public function removeFromQueue(Player $p){
+        if(!$this->isInQueue($p)){
+            return false;
+        }
+        unset($this->plugin->queue[array_search(strtolower($p->getName()), $this->plugin->queue)]);
+    }
+
+    public function isInQueue(Player $p){
+        return in_array(strtolower($p->getName()), $this->plugin->queue) ? true : false;
+    }
 }
