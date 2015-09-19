@@ -1,5 +1,5 @@
 # SurvivalGamesPE
 Our own SurvivalGames plugin
 
-Current developers: kvetinac97, Creeperface01
+Current developers: kvetinac97, CreeperFace
 Helper: MetinCZ
