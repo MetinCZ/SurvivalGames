@@ -1,0 +1,96 @@
+# Przetłumaczone na język polski przez: Jelly9912
+# Informacje ukazywane na konsoli
+
+plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "Plugin SurvivalGamesPE załadowany pomyślnie!"
+plugin-enable: "Plugin SurvivalGamesPE został włączony"
+plugin-disable: "Plugin SurvivalGamesPE został wyłączony"
+# Nazwy wszystkich aren, które zostay załadowane
+arenas-loaded: "Areny %NAME zostały załadowane"
+
+# Możesz dowolnie edytować ten plik
+# Możesz używać takich znaków jak: §1, &1, polecam używać znaku &
+
+prefix: "&5[&4&lSurvivalGames&r&5]&r"
+
+# Kody których możesz użyć
+# %PLAYER = nazwa danego gracza, %NAME = nazwy aren, %WORLD = nazwa świata
+# %COUNT = ilość graczy na arenie, %MAXCOUNT = maksymalna ilość graczy na arenie
+
+game-connect: "&a%PLAYER &edołączył do areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
+game-leave: "&c%PLAYER &ewyszedł z areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
+join_to_arena: "&aDołączyłeś/aś do areny &b%NAME. &aGra zaczyna się za &6%TIME"
+leave_from_arena: "&cWyszedłeś z areny &b%NAME"
+
+# Tutaj możesz użyć kody %TIME
+
+player_vote: "&a%PLAYER &ezagłosował aby zacząć grę"
+players_remaning: "&ePozostali gracze: &6[&e%activeplayers&6]"
+player_win: "&a%KILLER &ezabił gracza &c%PLAYER wygrywając rundę na arenie &6%NAME, &egratulacje !"
+spectate: "&eJesteś w trybie obserwatora, użyj /sg leave aby wyjść z areny"
+no_permission: "&cNie możesz dołączyć do areny &6%NAME"
+restock_chest: "&5Wszystkie skrzynie zostały uzupełnione !"
+countdown: "&aArena &6%NAME &astartuje za &b%TIME"
+started: "&aArena &6%NAME &arozpoczęła się"
+gameend: "&cArena &6%NAME &czakończyła się"
+gamewaiting: "&eArena &6%NAME &ewkrótce się zacznie. Przygotujcie się"
+gamestarting: "&eArena &6%NAME &ezacznie się za &b%TIME &esekund"
+gamestarted: "&eArena &6%NAME &ewystartowała !"
+gamedisabled: "&eArena &6%NAME &ewyłączona"
+gameenabled: "&eArena &6%NAME &ewłączona"
+
+# Błędy i informacje w grze
+game_full: "&cArena &6%NAME &cjest pełna !"
+already_ingame: "&cArena &6%NAME &cjest w trakcie gry !"
+no_permission: "cNie możesz wykonać tej akcji"
+game_disabled: "&cArena &6%TIME &cjest wyłączona !"
+not_enought_players: "&cNiewystarczającza ilość graczy do rozpoczęcia gry"
+game_doesnt_exist: "&cArena &6%NAME &cnie istnieje !"
+not_ingame: "&cMusisz być w grze aby użyć tej komendy !"
+
+# Typy śmierci na arenie
+DEFAULT: "&eGracz &c%PLAYER &ezginął"
+BLOCK_EXPLOSION: "&eGracz &c%PLAYER &ezginął od wybuchu"
+ENTITY_EXPLOSION: "&eGracz &c%PLAYER &ezginął od wybuchu"
+DROWNING: "&eGracz &c%PLAYER &eutonął"
+FALL: "&eGracz &c%PLAYER &ezginął od upadku"
+FIRE: "&eGracz &c%PLAYER &espalił się na popiół"
+FIRE_TICK: "&eGracz &c%PLAYER &espalił się na popiół"
+LAVA: "&eGracz &c%PLAYER &eutonął w lawie"
+LIGHTING: "&eGracz &c%PLAYER &ezginął od uderzenia piorunem"
+MAGIC: "&eGracz &c%PLAYER &ezostał zabity przez magię"
+POISON: "eGracz &c%PLAYER &ezginął od trucizny"
+PROJECTILE: "eGracz &c%PLAYER &ezostał zastrzelony przez &a%KILLER"
+STARVATION: "&eGracz &c%PLAYER &eumarł z głodu"
+SUICIDE: "&eGracz &c%PLAYER &ezostał zabity prze administratora"
+VOID: "&eGracz &c%PLAYER wypadł poza świat"
+PLAYER: &eGracz &c%PLAYER &ezostał zabity przez &a%KILLER &6[&b%ITEM&6]"
+
+# Tutaj możesz edytować tzw. killstreak
+level1: "&a%PLAYER &eDouble Kill"
+level2: "&a%PLAYER &eMulti Kill"
+level3: "&a%PLAYER &dQuadra Kill"
+level4: "&a%PLAYER &bUltra Kill"
+level5: "&a%PLAYER &6Legendary Kill"
+
+# Opis komend po wpisaniu /help w grze lub na konsoli
+createarena: "Stworzenie nowej areny"
+delarena: "Usunięcie areny"
+disable: "Wyłączenie areny <id>"
+enable: "Włączenie areny <id>"
+flag: "Edytuj ustawienia areny"
+forcestart: "xxxxxxxxxxxxxxx"
+join: "Przejście do lobby"
+leave: "Opuszczenie gry"
+leavequeue: "xxxxxxxxxxxxxxx"
+lisarenas: "Lista wszystkich dostępnych aren"
+listplayers: "Lista graczy na arenie, w której jesteś"
+resetspawns: "Resetuj spawn na arenie <id>"
+setlobbyspawn: "Ustaw nowy spawn dla lobby"
+addlobbywall:  "Ustaw tabliczkę z lobby"
+setspawn: "Ustaw spawn na arenie, na której właśnie jesteś"
+setstatswall: "Ustaw tabliczkę ze statystykami"
+spectate: "Obserwuj daną arene"
+stats: "Zobacz swoje statystyki"
+vote: "Zagłosuj aby zacząć rozgrywkę"
+teleport: "Teleportacja na arene"
+
