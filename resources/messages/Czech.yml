@@ -9,19 +9,7 @@ arenas-loaded: "Areny %NAME byly uspesne nacteny."
 #Messagges czech by MetinCZ (omlouvám se kdyby někde byly chyby!)
 #Od tohoto řádku lze používat barvy ve formátu &1,§1 (doporučujeme &1)
 
-
-version: 1
-prefix:
-  main: "&6[&4&lSG&6]"
-  states:
-    info: ''
-    warning: "&c[Upozorneni] "
-    error: "&4[Chyba]"
-
-#Připojování, odpojování na/ze serveru...
-# %PLAYER je nick (jméno) hráče, který danou akci provedl
-server-connect: "&a%PLAYER se pripojil/a na server."
-server-disconnect: "&4%PLAYER se odpojil/a."
+prefix: "&6[&4&lSG&6]"
 
 #Všechny překlady nemusí být 100% dobře!
 
@@ -29,16 +17,16 @@ server-disconnect: "&4%PLAYER se odpojil/a."
 # %PLAYER = nick připojeného hráče, %NAME = jméno arény, %WORLD = svět hry
 # %COUNT = počet hráčů ve aréně %MAXCOUNT = maximální počet hráčů v aréně
 
-game-connect: "&b%PLAYER &ase pripojil/a do areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
-game-leave: "&b%PLAYER &4se odpojil/a z areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
-join_to_arena: "&aPripojil/a ses do areny &b%NAME. &1Arena zacina za &b%TIME"
-leave_from_arena: "&cOdpojil/a ses z areny &b%NAME."
+game-connect: "&b%PLAYER &ase pripojil do areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+game-leave: "&b%PLAYER &4se odpojil z areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+join_to_arena: "&aPripojil ses do areny &b%NAME. &1Arena zacina za &b%TIME"
+leave_from_arena: "&cOdpojil ses z areny &b%NAME."
 
 #Informační zprávy do hry.
 #Zde lze použít pouze %TIME = čas před startem arény, %NAME, %WORLD
-player_vote: "&b %PLAYER volil/a aby arena uz startovala."
+player_vote: "&b %PLAYER volil aby arena uz startovala."
 players_remaining: "&2 Hracu zbyva v arene: &e[%activeplayers] !"
-player_win: "&e %KILLER &czabil/a &e %PLAYER &a a vyhral/a v &3arene %NAME &bVelka gratulace!"
+player_win: "&e %KILLER &czabil &e %PLAYER &a a vyhral v &3arene %NAME &bVelka gratulace!"
 spectate: "&aTed jsi sledujici! Pouzij /sg leave pro opusteni areny."
 no_permission: "&cNemas prava na pripojeni do areny %NAME"
 restock_chest: "&5Bedny byly doplneny!"
@@ -59,45 +47,24 @@ game_disabled: "&cArena %NAME je vypnuta!"
 not_enought_players: "&cNeni dostatek hracu pro startovani areny."
 game_doesnt_exist: "&cArena %NAME neexistuje!"
 not_ingame: "&cMusis byt v arene pro tuto akci!"
-command: "&cPrikaz %COMMAND nefunguje"
-no_lobby_spawn: "&cLobby spawn Neni nastaven!"
-wrong_target: "&cNa blok co koukas neni %TYPE."
-not_a_number: "&e %INPUT &cneni cislo!"
-not_specified: "&c%INPUT nespecifikovano!"
-arguments_not_needed: '&cArgumenty neni treba!'
-game_not_exist: "&cTato hra neexistuje"
-not_in_arena: "&cNeni v arene!"
-between: "&cSpawn musi byt mezi 1 & %NUM."
-bad_input: "&cVstup musi byt "dalsi" nebo cislo."
-not_inside: "&cNejsi uvnitr areny!"
-no_spawns: "&cNeni nastaveny spawn."
-spect_in_game: "&cNemuzes sledovat arenu kdyz je ve hre!"
 
 #Zprávy při smrti v aréně.
-DEFAULT: "&b%PLAYER &cumrel/a!"
-BLOCK_EXPLOSION: "&b%PLAYER &6 byl/a zabit/a od vybuchu!"
-ENTITY_EXPLOSION: "&b%PLAYER &6 byl/a zabit/a vybuchem!"
-DROWNING: "&b%PLAYER &6se utopil/a!"
-FALL: "&b%PLAYER &6spadl/a z velke vysky a zemrel/a!"
-FIRE: "&b%PLAYER &6shorel/a!"
-FIRE_TICK: "&b%PLAYER &6uhorel/a k smrti!"
-LAVA: "&b%PLAYER &6shorel/a v lave!"
-LIGHTING: "&b%PLAYER &6byl/a zabita bleskem!"
-MAGIC: "&b%PLAYER &6byl/a zabita magii"
-POISON: "&b%PLAYER &6byl/a otraven/a a zemrel."
-PROJECTILE: "&b%PLAYER &6byl/a strelen sipem a zemrel"
-STARVATION: "&b%PLAYER &6umrel/a na vyhladoveni!"
-SUICIDE: "&b%PLAYER &cbyl/a zabit administratorem"
-VOID: "&b%PLAYER &6spadl/a do voidu"
-WITHER: "&b%PLAYER &6byl/a zabit witherem!"
-CREEPER: "&b%PLAYER &6byl/a zabit/a vybuchem od creepra!"
-SKELETON: "&b%PLAYER &6byl/a zabit/a skeletonem!"
-ZOMBIE: "&b%PLAYER &6byl/a nakazen/a od zombika a zemrel/a!"
-PIG_ZOMBIE: "&b%PLAYER &6byl/a zabit/a  ZombiPigmenem!"
-SPIDER: "&b%PLAYER &6byl/a zabit/a pavoukem!"
-CAVE_SPIDER: "&b%PLAYER &6byl/a zabit/a jedovatym pavoukem!"
-GHAST: "&b%PLAYER &6byl/a zabit/a ghastem!"
-PLAYER: "&b%PLAYER &cbyl/a zabit/a hracem  &e%KILLER &b s %ITEM!"
+DEFAULT: "&b%PLAYER &cumrel!"
+BLOCK_EXPLOSION: "&b%PLAYER &6 byl zabit od vybuchu!"
+ENTITY_EXPLOSION: "&b%PLAYER &6 byl zabit vybuchem!"
+DROWNING: "&b%PLAYER &6se utopil!"
+FALL: "&b%PLAYER &6spadl z velke vysky a zemrel!"
+FIRE: "&b%PLAYER &6shorel!"
+FIRE_TICK: "&b%PLAYER &6uhorel k smrti!"
+LAVA: "&b%PLAYER &6shorel v lave!"
+LIGHTING: "&b%PLAYER &6byl zabit bleskem!"
+MAGIC: "&b%PLAYER &6byl zabit magii"
+POISON: "&b%PLAYER &6byl otraven a zemrel."
+PROJECTILE: "&b%PLAYER &6byl zastrelen hracem %KILLER"
+STARVATION: "&b%PLAYER &6umrel na vyhladoveni!"
+SUICIDE: "&b%PLAYER &cbyl zabit administratorem"
+VOID: "&b%PLAYER &6spadl do voidu"
+PLAYER: "&b%PLAYER &cbyl zabit hracem  &e%KILLER &bpomoci %ITEM!"
 
 #Tyto zprávy jsou  killstreak double kill atd..
 level1: "&b%PLAYER &6 Double Kill!"
