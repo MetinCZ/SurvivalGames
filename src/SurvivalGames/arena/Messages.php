@@ -20,6 +20,6 @@ class Messages{
     }
 
     public function getMsg($msg){
-        return str_replace("&", "§", $this->cfg->getAll()[$msg]);
+        return str_replace("&", "§", $this->cfg[$msg]);
     }
 }
