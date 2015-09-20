@@ -18,4 +18,12 @@ class PlayerJoinArenaEvent extends PluginEvent{
   $this->arena = $arena;
  }
 
+ public function getPlayer(){
+  return $this->player;
+ }
+
+ public function getArena(){
+  return $this->arena;
+ }
+ 
 }
