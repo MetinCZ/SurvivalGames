@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Honza
- * Date: 16. 9. 2015
- * Time: 17:19
- */
+
+// Messages manager for SurvivalGames
+// © PocketMineDevelopers 2015
 
 namespace SurvivalGames\Arena;
 
@@ -23,6 +20,6 @@ class Messages{
     }
 
     public function getMsg($msg){
-        return str_replace("&", "�", $this->cfg[$msg]);
+        return str_replace("&", "§", $this->cfg->getAll()[$msg]);
     }
 }
