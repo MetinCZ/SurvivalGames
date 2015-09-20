@@ -1,6 +1,6 @@
 #Zprávy, které se ukážou v konzoli
 
-plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "Plugin SurvivalGamesPE uspesne nacten!"
+plugin-load: "Plugin SurvivalGamesPE uspesne nacten!"
 plugin-enable: "Plugin SurvivalGamesPE byl uspesne povolen "
 plugin-disable: "Plugin SurvivalGamesPE byl uspesne odnacten!"
 # %NAME jsou jména všech arén, které budou načteny
@@ -41,7 +41,8 @@ gameenabled: "&bArena %NAME zapnuta"
 
  #Chybné upozornění. (ERRORS)
 game_full: "&cArena %NAME je plna!"
-already_ingame: "&cArena %NAME momentalne bezi."
+already_ingame: "&cUz jsi v nejake arene!"
+already_running: "&cArena %NAME momentalne bezi."
 no_permission: "&cNemas pravo na tuto akci."
 game_disabled: "&cArena %NAME je vypnuta!"
 not_enought_players: "&cNeni dostatek hracu pro startovani areny."
