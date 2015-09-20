@@ -25,11 +25,12 @@ abstract class ArenaManager{
         $this->plugin = $plugin;
     }
 
-    public function getArenaPlayers(){
+    public function getPlayers(){
         $players = [];
         foreach($this->plugin->players as $name => $p){
             $players[$name] = $p["ins"];
         }
+        return $players;
     }
 
     public function messageArenaPlayers($message){
@@ -43,7 +44,7 @@ abstract class ArenaManager{
     }
 
     public function isArenaFull(){
-        return $this->getArenaPlayers() >= $this->plugin->data["max_players"] ? true : false;
+        return $this->getPlayers() >= $this->plugin->data["max_players"] ? true : false;
     }
 
     public function checkAlive(){
@@ -149,5 +150,9 @@ abstract class ArenaManager{
 
     public function isInQueue(Player $p){
         return in_array(strtolower($p->getName()), $this->plugin->queue) ? true : false;
+    }
+
+    public function getName(){
+        return $this->plugin->name;
     }
 }

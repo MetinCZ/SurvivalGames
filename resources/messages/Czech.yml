@@ -17,8 +17,8 @@ prefix: "&6[&4&lSG&6]"
 # %PLAYER = nick připojeného hráče, %NAME = jméno arény, %WORLD = svět hry
 # %COUNT = počet hráčů ve aréně %MAXCOUNT = maximální počet hráčů v aréně
 
-game-connect: "&b%PLAYER &ase pripojil do areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
-game-leave: "&b%PLAYER &4se odpojil z areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+game_connect: "&b%PLAYER &ase pripojil do areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
+game_leave: "&b%PLAYER &4se odpojil z areny &e[&a%COUNT&7/&c%MAXCOUNT&e]"
 join_to_arena: "&aPripojil ses do areny &b%NAME. &1Arena zacina za &b%TIME"
 leave_from_arena: "&cOdpojil ses z areny &b%NAME."
 

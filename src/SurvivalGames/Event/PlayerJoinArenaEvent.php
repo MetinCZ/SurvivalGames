@@ -6,24 +6,30 @@
 namespace SurvivalGames\Event;
 
 
+use pocketmine\event\Cancellable;
 use pocketmine\event\plugin\PluginEvent;
+use pocketmine\Player;
+use SurvivalGames\Arena\Arena;
 
-class PlayerJoinArenaEvent extends PluginEvent{
- 
- public $player;
- public $arena;
- 
- public function __construct(Player $player, Arena $arena){
-  $this->player = $player;
-  $this->arena = $arena;
- }
+class PlayerJoinArenaEvent extends PluginEvent implements Cancellable{
 
- public function getPlayer(){
-  return $this->player;
- }
+    public static $handlerList = null;
 
- public function getArena(){
-  return $this->arena;
- }
+    protected $player;
+    protected $arena;
+
+    protected $cancelled = false;
  
+    public function __construct(Player $player, Arena $arena){
+        $this->player = $player;
+        $this->arena = $arena;
+    }
+
+    public function getPlayer(){
+        return $this->player;
+    }
+
+    public function getArena(){
+        return $this->arena;
+    }
 }

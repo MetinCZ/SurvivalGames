@@ -42,18 +42,22 @@ class Arena extends ArenaManager implements Listener{
         $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaSchedule($this), 20);
     }
 
-    public function joinToArena(Player $p, $arena_name){
-        if($this->game[$arena_name] >= 1){
+    public function joinToArena(Player $p){
+        if($this->game >= 1){
             $p->sendMessage($this->msg->getMsg("already_running"));
         }
         if($this->isArenaFull() && !$p->isOp() && !$p->hasPermission("sg.full")){
-            $p->sendMessage($this->msg->getMsg("arena_full")); //full arena
+            $p->sendMessage($this->msg->getMsg("game_full"));
+            return;
+        }
+        $this->plugin->getServer()->getPluginManager()->callEvent($e = new PlayerJoinArenaEvent($p, $this));
+        if($e->isCancelled()){
             return;
         }
         $this->players[strtolower($p->getName())]["ins"] = $p;
         $this->saveInv($p);
         $p->teleport($this->getNextJoinPos());
-        $this->messageArenaPlayers("");
+        $this->messageArenaPlayers(str_replace(["%PLAYER", "%COUNT", "%MAXCOUNT"], [$p->getName(), count($this->getPlayers()), $this->getMaxPlayers()], $this->msg->getMsg("game_connect")));
     }
 
     public function leaveArena(Player $p){
@@ -77,12 +81,6 @@ class Arena extends ArenaManager implements Listener{
         if($e->getAction() === $e::LEFT_CLICK_BLOCK){
 
         }
-    }
-
-    public functon onJoin(PlayerJoinArenaEvent $e){
-     if ($e->getArena() == $this->name){
-     $this->joinToArena($e->getPlayer());   
-     }
     }
 
     public function onBlockBreak(BlockBreakEvent $e){

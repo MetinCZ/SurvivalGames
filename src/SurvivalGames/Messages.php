@@ -3,11 +3,7 @@
 // Messages manager for SurvivalGames
 // © PocketMineDevelopers 2015
 
-namespace SurvivalGames\Arena;
-
-
-use pocketmine\utils\Config;
-use SurvivalGames\SurvivalGames;
+namespace SurvivalGames;
 
 class Messages{
 

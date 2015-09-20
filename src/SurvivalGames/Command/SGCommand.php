@@ -28,7 +28,7 @@ class SGCommand extends BaseCommand{
                   break;
                }
                if($this->plugin->getPlayerArena($sender)){
-                  $sender->sendMessage($this->plugin->messagesManager()->getMsg("already_in_game"));
+                  $sender->sendMessage($this->plugin->messagesManager()->getMsg("already_ingame"));
                   break;
                }
                if(!($arena = $this->plugin->getArena($args[1]))){

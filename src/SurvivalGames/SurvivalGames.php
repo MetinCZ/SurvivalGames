@@ -11,7 +11,6 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 use SurvivalGames\Arena\Arena;
-use SurvivalGames\Arena\Messages;
 
 class SurvivalGames extends PluginBase{
 
@@ -19,14 +18,11 @@ class SurvivalGames extends PluginBase{
     public $messagesManager;
     public $cfg;
     public $msg;
-<<<<<<< HEAD
-=======
 
     public function onLoad(){
-     $this->initConfig();
-     $this->getLogger()->info(TextFormat::YELLOW.$this->msg->get("plugin-load"));
+        $this->initConfig();
+        $this->getLogger()->info(TextFormat::YELLOW.$this->msg->get("plugin-load"));
     }
->>>>>>> 8f42a9be023c7281dba785b418f2e428ecbc21e8
 
     public function onEnable(){
         $this->cfg = (new Config($this->getDataFolder()."config.yml", Config::YAML))->getAll();
