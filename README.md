@@ -1,7 +1,8 @@
 # SurvivalGamesPE
 Our own SurvivalGames plugin
 
-<h1> <font color="red">Please not that this plugin HASN'T BEEN DONE YET! Don't ask for beta builds, we'll release them when it'll be right time </font></h1>
+<h1> <font color="red">Please note that this plugin HASN'T BEEN DONE YET! Don't ask for beta builds, we'll release them when it'll be right time </font></h1>
+<i>PocketMineDevelopers Team</i>
 
 Current developers: CreeperFace, Ragnok123
 
