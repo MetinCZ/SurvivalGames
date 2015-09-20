@@ -1,11 +1,11 @@
 # Przetłumaczone na język polski przez: Taytan9912
 # Informacje ukazywane na konsoli
 
-plugin-loa&e%COUNT&7/&e%MAXCOUNT&7]"orums.pocketmine.net/threads/whats-wrong.11396/: "Plugin SurvivalGamesPE załadowany pomyślnie!"
-plugin-enable: "Plugin SurvivalGamesPE został włączony"
-plugin-disable: "Plugin SurvivalGamesPE został wyłączony"
+plugin_load: "Plugin SurvivalGamesPE załadowany pomyślnie!"
+plugin_enable: "Plugin SurvivalGamesPE został włączony"
+plugin_disable: "Plugin SurvivalGamesPE został wyłączony"
 # Nazwy aren, które zostay załadowane
-arenas-loaded: "Arena %NAME została załadowana"
+arenas_loaded: "Arena %NAME została załadowana"
 
 # Możesz dowolnie edytować ten plik
 # Możesz używać takich znaków jak: §1, &1, polecam używać znaku &
@@ -16,8 +16,8 @@ prefix: "&5[&6SurvivalGames&r&5]&r"
 # %PLAYER = nazwa danego gracza, %NAME = nazwy aren, %WORLD = nazwa świata
 # %COUNT = ilość graczy na arenie, %MAXCOUNT = maksymalna ilość graczy na arenie
 
-game-connect: "&5%PLAYER &edołączył do areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
-game-leave: "&c%PLAYER &ewyszedł z areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
+game_connect: "&5%PLAYER &edołączył do areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
+game_leave: "&c%PLAYER &ewyszedł z areny &6[&a%COUNT&6/&c%MAXCOUNT&6]"
 join_to_arena: "&aDołączyłeś/aś do areny &b%NAME. &aGra zaczyna się za &6%TIME"
 leave_from_arena: "&cWyszedłeś z areny &b%NAME"
 
@@ -40,7 +40,8 @@ gameenabled: "&eArena &6%NAME &ewłączona"
 
 # Błędy i informacje w grze
 game_full: "&cArena &6%NAME &cjest pełna !"
-already_ingame: "&cArena &6%NAME &cjest w trakcie gry !"
+game_already_ingame: "&cArena &6%NAME &cjest w trakcie gry !"
+player_already_ingame: "&cYou are already ingame"
 no_permission: "cNie możesz wykonać tej akcji"
 game_disabled: "&cArena &6%TIME &cjest wyłączona !"
 not_enought_players: "&cNiewystarczającza ilość graczy do rozpoczęcia gry"
