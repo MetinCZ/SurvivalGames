@@ -202,11 +202,18 @@ class SurvivalGames extends PluginBase{
     }
 
     public function getPlayerArena(Player $p){
-
+        $result = false;
+        foreach($this->arenas as $arena){
+            if($arena->inArena($p)){
+                $result = true;
+                break;
+            }
+        }
+        return $result;
     }
 
     public function getArena($arena){
-
+        return isset($this->arenas[$arena]) ? $this->arenas[$arena] : false;
     }
 
     public function initConfig(){
