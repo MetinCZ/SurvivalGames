@@ -1,11 +1,11 @@
 # Przetłumaczone na język polski przez: Taytan9912
 # Informacje ukazywane na konsoli
 
-plugin_load: "Plugin SurvivalGamesPE załadowany pomyślnie!"
-plugin_enable: "Plugin SurvivalGamesPE został włączony"
-plugin_disable: "Plugin SurvivalGamesPE został wyłączony"
+plugin-load: "Ładowanie pluginu SurvivalGamesPE ..."
+plugin-enable: "Plugin SurvivalGamesPE został włączony"
+plugin-disable: "Plugin SurvivalGamesPE został wyłączony"
 # Nazwy aren, które zostay załadowane
-arenas_loaded: "Arena %NAME została załadowana"
+arenas-loaded: "Arena %NAME została załadowana"
 
 # Możesz dowolnie edytować ten plik
 # Możesz używać takich znaków jak: §1, &1, polecam używać znaku &
@@ -40,8 +40,8 @@ gameenabled: "&eArena &6%NAME &ewłączona"
 
 # Błędy i informacje w grze
 game_full: "&cArena &6%NAME &cjest pełna !"
-game_already_ingame: "&cArena &6%NAME &cjest w trakcie gry !"
-player_already_ingame: "&cYou are already ingame"
+already_ingame: "&cAktualnie jesteś na arenie !"
+already_running: "&cArena &6%NAME &cjest aktualnie w grze !"
 no_permission: "cNie możesz wykonać tej akcji"
 game_disabled: "&cArena &6%TIME &cjest wyłączona !"
 not_enought_players: "&cNiewystarczającza ilość graczy do rozpoczęcia gry"
