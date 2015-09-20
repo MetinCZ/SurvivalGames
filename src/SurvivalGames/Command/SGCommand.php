@@ -13,17 +13,13 @@ use SurvivalGames\arena\Arena;
 class SGCommand extends BaseCommand{
 
    public $data;
-   public $plugin;
-   public $arena;
 
     public function __construct(SurvivalGames $plugin, Arena $arena){
-     $this->plugin = $plugin;
-     $this->arena= $arena;
      $this->data = 
       [
-       "msg" => $plugin->msg->getAll();
-       "arena" => $plugin->arenas;
-       "players" => $arena->players;
+       "manager" => $plugin->messagesManager,
+       "arenas" => $plugin->arenas,
+       "arena" => $arena
       ];
      parent::__construct($plugin, "survivalgames", "Main sg command", "/survivalgames", "/survivalgames", ["sg"]);
     }
@@ -32,7 +28,18 @@ class SGCommand extends BaseCommand{
      if($sender instanceof Player){
       switch($args[0]){
        case "join":
-        
+        $arenatojoin = array_rand($this->data["arenas"],1);
+        if (!(isset($this->data["players"][$sender->getName()]))){
+         if ($this->data["arena"]->isArenaFull()){
+         $this->plugin->getServer()->getPluginManager()->callEvent(new PlayerJoinArenaEvent($sender,$arenatojoin));
+         }
+         else {
+          $sender->sendMessage($this->data["manager"]->getMsg("game_full"));   
+         }
+        }
+        else {
+         $sender->sendMessage($this->data["manager"]->getMsg("already_ingame"));  
+        }
        break;     
       }
      }
