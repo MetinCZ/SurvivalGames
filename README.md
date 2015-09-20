@@ -11,4 +11,4 @@ You can add some languages by creating a pull request on https://github.com/Pock
 
 You can donate to support each member of team:
 
-kvetinac97: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XQ5TDS9GZ38T2"><font color="aqua">DONATE</font></a>
+kvetinac97: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XQ5TDS9GZ38T2"><font color="red">DONATE</font></a>
