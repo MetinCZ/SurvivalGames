@@ -1,6 +1,8 @@
 # SurvivalGamesPE
 Our own SurvivalGames plugin
 
+<h1> <font color="red">Please not that this plugin HASN'T BEEN DONE YET! Don't ask for beta builds, we'll release them when it'll be right time </font></h1>
+
 Current developers: CreeperFace, Ragnok123
 
 Languages: - Czech by MetinCZ
