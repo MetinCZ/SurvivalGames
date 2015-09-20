@@ -12,26 +12,32 @@ use SurvivalGames\arena\Arena;
 
 class SGCommand extends BaseCommand{
 
-   public $data;
+   public $plugin;
 
-    public function __construct(SurvivalGames $plugin, Arena $arena){
-     $this->data = 
-      [
-       "manager" => $plugin->messagesManager,
-       "arenas" => $plugin->arenas,
-       "arena" => $arena
-      ];
-     parent::__construct($plugin, "survivalgames", "Main sg command", "/survivalgames", "/survivalgames", ["sg"]);
+   public function __construct(SurvivalGames $plugin){
+      $this->plugin = $plugin;
+      parent::__construct($plugin, "survivalgames", "Main sg command", "/survivalgames", "/survivalgames", ["sg"]);
     }
 
-    public function execute(CommandSender $sender, $alias, array $args) {
-     if($sender instanceof Player){
-      switch($args[0]){
-       case "join":
-         $this->plugin->getServer()->getPluginManager()->callEvent(new PlayerJoinArenaEvent($sender,$arenatojoin));
-       break;     
+   public function execute(CommandSender $sender, $alias, array $args) {
+      if($sender instanceof Player){
+         switch(strtolower($args[0])){
+            case "join":
+               if(!isset($args[1]) || isset($args[2])){
+                  $sender->sendMessage(TextFormat::YELLOW."use /sg join [arena]");
+                  break;
+               }
+               if($this->plugin->getPlayerArena($sender)){
+                  $sender->sendMessage($this->plugin->messagesManager()->getMsg("already_in_game"));
+                  break;
+               }
+               if(!($arena = $this->plugin->getArena($args[1]))){
+                  $sender->sendMessage("game_doesnt_exist");
+                  break;
+               }
+               $arena->joinToArena($sender);
+               break;
+         }
       }
-     }
-    }
-    
+   }
 }
