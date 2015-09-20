@@ -1,13 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Honza
- * Date: 16. 9. 2015
- * Time: 16:45
- */
+
+// Main arena Class
+// © PocketMineDevelopers 2015
 
 namespace SurvivalGames\Arena;
-
 
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
@@ -18,6 +14,7 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\Player;
 use SurvivalGames\SurvivalGames;
+use SurvivalGames\Event\PlayerJoinArenaEvent;
 
 class Arena extends ArenaManager implements Listener{
 
@@ -25,7 +22,7 @@ class Arena extends ArenaManager implements Listener{
     public $game = 0; //0 = waiting, 1 = starting, 2 = playing, 3 = deathmatch
     public $players = [];
     public $queue = [];
-    public $id;
+    public $name;
     public $data;
     public $level;
     public $msg;
@@ -33,10 +30,10 @@ class Arena extends ArenaManager implements Listener{
 
     public $positions;
 
-    public function __construct(SurvivalGames $plugin, $id, $data){
+    public function __construct(SurvivalGames $plugin, $name, $data){
         parent::__construct($this);
         $this->plugin = $plugin;
-        $this->id = $id;
+        $this->name = $name;
         $this->data = $data;
         $this->positions = array_fill(1, count($this->getSpawnPositions()), 0);
         $this->msg = $this->plugin->messagesManager;
@@ -45,12 +42,12 @@ class Arena extends ArenaManager implements Listener{
         $this->plugin->getServer()->getScheduler()->scheduleRepeatingTask(new ArenaSchedule($this), 20);
     }
 
-    public function joinToArena(Player $p){
-        if($this->game >= 1){
-            $p->sendMessage($this->msg->getMsg(""));
+    public function joinToArena(Player $p, $arena_name){
+        if($this->game[$arena_name] >= 1){
+            $p->sendMessage($this->msg->getMsg("already_running"));
         }
         if($this->isArenaFull() && !$p->isOp() && !$p->hasPermission("sg.full")){
-            $p->sendMessage($this->msg->getMsg("")); //full arena
+            $p->sendMessage($this->msg->getMsg("arena_full")); //full arena
             return;
         }
         $this->players[strtolower($p->getName())]["ins"] = $p;
@@ -80,6 +77,12 @@ class Arena extends ArenaManager implements Listener{
         if($e->getAction() === $e::LEFT_CLICK_BLOCK){
 
         }
+    }
+
+    public functon onJoin(PlayerJoinArenaEvent $e){
+     if ($e->getArena() == $this->name){
+     $this->joinToArena($e->getPlayer());   
+     }
     }
 
     public function onBlockBreak(BlockBreakEvent $e){

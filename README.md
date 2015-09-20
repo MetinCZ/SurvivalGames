@@ -1,5 +1,10 @@
 # SurvivalGamesPE
 Our own SurvivalGames plugin
 
-Current developers: kvetinac97, CreeperFace
-Helper: MetinCZ
+Current developers: CreeperFace, Ragnok123
+
+Languages: - Czech by MetinCZ
+           - English by kvetinac97
+           - Polish by Taytan9912
+           
+You can add some languages by creating a pull request on https://github.com/PocketMineDevelopers/SurvivalGames-Messages
