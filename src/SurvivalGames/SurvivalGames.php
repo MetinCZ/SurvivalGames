@@ -18,6 +18,7 @@ class SurvivalGames extends PluginBase{
     public $arenas = [];
     public $messagesManager;
     public $cfg;
+    public $msg;
 
     public function onEnable(){
         $this->initConfig();
@@ -208,9 +209,7 @@ class SurvivalGames extends PluginBase{
         if(!file_exists($this->getDataFolder())){
             @mkdir($this->getDataFolder());
         }
-        if(!is_file($this->getDataFolder()."config.yml")){
-            $this->saveResource("config.yml");
-        }
+        $this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder()."config.yml", Config::YAML);
         if(!file_exists($this->getDataFolder()."arenas/")){
             @mkdir($this->getDataFolder()."arenas/");
@@ -219,19 +218,14 @@ class SurvivalGames extends PluginBase{
         if(!file_exists($this->getDataFolder()."languages/")){
             @mkdir($this->getDataFolder()."languages/");
         }
-        if(!is_file($this->getDataFolder()."languages/English.yml")){
-            $this->saveResource("languages/English.yml");
-        }
-        if(!is_file($this->getDataFolder()."languages/Czech.yml")){
-            $this->saveResource("languages/Czech.yml");
-        }
-        if(!is_file($this->getDataFolder()."languages/{$this->cfg->get('Language')}.yml")){
+        $this->saveResource("languages/English.yml");
+        $this->saveResource("languages/Czech.yml");
+        if(!file_exists($this->getDataFolder()."languages/{$this->cfg->get('language')}.yml")){
             $this->msg = new Config($this->getDataFolder()."languages/English.yml", Config::YAML);
             $this->getServer()->getLogger()->info("Selected language English");
+            return;
         }
-        else{
-            $this->msg = new Config($this->getDataFolder()."languages/{$this->cfg->get('Language')}.yml", Config::YAML);
-            $this->getServer()->getLogger()->info("Selected language {$this->cfg->get('Language')}");
-        }
+        $this->msg = new Config($this->getDataFolder()."languages/{$this->cfg->get('Language')}.yml", Config::YAML);
+        $this->getServer()->getLogger()->info("Selected language {$this->cfg->get('Language')}");
     }
 }
